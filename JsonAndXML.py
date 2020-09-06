@@ -1,18 +1,19 @@
 import json
 from pprint import pprint
+def work_with_json():
 
-with open("newsafr.json", encoding='utf-8') as f:
-    json_data = json.load(f)
-str = ''
-for element in json_data.values():
-    for el in element.values():
-        if type(el) == dict:
-            for e in el["items"]:
-                #print(e["description"])
-                str = str + e["description"]
+    with open("newsafr.json", encoding='utf-8') as f:
+        json_data = json.load(f)
+    str = ''
+    for element in json_data.values():
+        for el in element.values():
+            if type(el) == dict:
+                for e in el["items"]:
+                    #print(e["description"])
+                    str = str + e["description"]
 
-str = str.split()
-print(str)
+    str = str.split()
+    return str
 
 def function_MAX_Word(string1):
     s = string1
@@ -38,4 +39,4 @@ def function_MAX_Word(string1):
         print(f"Слово под номером {i+1} встречается {All_list3[i][0]} раз. Это слово \"{All_list3[i][1]}\"")
 
 
-function_MAX_Word(str)
+function_MAX_Word(work_with_json())
